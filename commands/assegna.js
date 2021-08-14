@@ -3,8 +3,10 @@ module.exports = {
   name: "assegna",
   aliases: ['give'],
   description: "Assegna dei punti a un utente",
-  async execute(client, message, args, cmd, discord, profileData) {
+  async execute(message, args, cmd, client, discord, profileData) {
     //.........................................................................
+
+    const amount = args[1];
     const target = message.mentions.users.first();
 
     //..........................................................................
@@ -12,8 +14,8 @@ module.exports = {
     if(message.member.roles.cache.some(role => role.name === 'Resp | Cerberus Élite')){
 
       //........................................................................
-      if (!args[1]) return message.channel.send('Inserisci il numero di puni da assegnare')
-      if (args[1] % 1 != 0 || args[1] <= 0) return message.channel.send("I punti da assegnare devono essere un numero intero");
+      
+      if (isNaN(amount)) return message.channel.send("I punti da assegnare devono essere un numero intero");
       if (!args.length) return message.channel.send("Nessun utente menzionato");
       if (!target) return message.channel.send("L'utente non esiste");
 
@@ -29,13 +31,13 @@ module.exports = {
           },
           {
             $inc: {
-              luglio: args[1],
+              punti: amount,
             },
           }
         );
           //.....................................................................
 
-        return message.channel.send(`Hai assegnato a ${target}: **${args[1]} punti**`);
+        return message.channel.send(`Hai assegnato a ${target}: **${amount} punti**`);
 
           //......................................................................
 
@@ -46,8 +48,7 @@ module.exports = {
     } else if(message.member.roles.cache.some(role => role.name === 'Aiuto Resp. Élite')){
       //........................................................................
 
-      if (!args[1]) return message.channel.send('Inserisci il numero di puni da assegnare')
-      if (args[1] % 1 != 0 || args[1] <= 0) return message.channel.send("I punti da assegnare devono essere un numero intero");
+      if (isNaN(amount)) return message.channel.send("I punti da assegnare devono essere un numero intero");
       if (!args.length) return message.channel.send("Nessun utente menzionato");
       if (!target) return message.channel.send("L'utente non esiste");
 
@@ -63,13 +64,13 @@ module.exports = {
           },
           {
             $inc: {
-              luglio: args[1],
+              punti: amount,
             },
           }
         );
           //.....................................................................
 
-        return message.channel.send(`Hai assegnato a ${target}: **${args[1]} punti**`);
+        return message.channel.send(`Hai assegnato a ${target}: **${amount} punti**`);
 
           //......................................................................
 

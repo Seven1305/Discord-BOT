@@ -1,7 +1,6 @@
 const tts = require('google-tts-api');
 const download = require('download');
 const { Readable } = require('stream');
-const Discord = require ('discord.js');
 
 module.exports = {
   name: "tts",
