@@ -1,0 +1,18 @@
+const Discord = require('discord.js');
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MongoDB, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useFindAndModify: false 
+}).then(console.log('Connesso con MongoDB!'))
+
+
+client.commands = new Discord.Collection();
+client.events = new Discord.Collection();
+
+['commands_handler', 'event_handler'].forEach(handler =>{
+    require(`./handlers/${handler}`)(client, Discord);
+})
+
+client.login(process.env.BOT_token);
