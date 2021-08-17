@@ -11,16 +11,16 @@ module.exports = {
         .setTitle('Prefisso del bot: `^`')
         .setAuthor('LISTA COMANDI', message.author.displayAvatarURL())
         .addFields({
-            name: 'INFO GIOCHI',
-            value: '`codm`丨`bs`丨`apex`丨`wr',
+            name: 'INFO',
+            value: '`codm`丨`bs`丨`apex`丨`wr`丨`partner`',
         },
         {
             name: 'UTILITA\'',
-            value: '`avatar`丨`id`',
+            value: '`avatar`',
         },
         {
             name: 'ÉLITE',
-            value: '`punti`丨`give`丨`db`',
+            value: '`punti`丨`***`丨`***`',
         },
         {
             name: 'FUN',
@@ -28,7 +28,7 @@ module.exports = {
         },
         {
             name: 'MODERAZIONE',
-            value: '`ban`丨`kick`丨`clear`',
+            value: '`ban`丨`kick`丨`clear`丨`***`丨`***`',
         },{
             name: 'IN ARRIVO!!',
             value: '`MUSICA!!`丨`WARN`丨`DICE`'
