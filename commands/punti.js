@@ -1,5 +1,4 @@
-//Da cambiare poi i permessi necessari
-
+const profileModel = require("../models/puntiElite");
 module.exports = {
   name: 'punti',
   aliases: ['points'],
