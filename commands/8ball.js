@@ -4,7 +4,7 @@ module.exports = {
     description: "8ball command",
     async execute (client, message, cmd, args, Discord) {
         if(!args[0]) return message.reply('Non mi hai chiesto niente 😒!')
-        let risposte = ["sì.", "sembra buono.", "sì", "certo.", "Sì, sicuramente.", "NO.", "Meglio non dirtelo ora.", "nah", "mai", "Non posso fare previsioni ora. o forse non ho voglia 👀", "Non lo so.", "Non lo so *ancora*...", "Non è un caso.", "Penso di sì.", "Solo per oggi!", "Non per oggi", "purtroppo sì..", "purtroppo no..", "forse!", "chiedi ancora.. dopo.."];
+        let risposte = ["SI.", "NO.", "Meglio se non ti rispondo", "Vero al 100%", "Meglio non dirtelo ora.", "Impossibile", "Falso al 100%", "Non posso fare previsioni ora. o forse non voglio 👀", "Non lo so.", "Penso di sì.", "Penso di no", "purtroppo sì...", "purtroppo no...", "forse!", "chiedi ancora.. dopo.."];
         
         let result = Math.floor((Math.random() * risposte.length));
         let question = args.slice().join(" ");

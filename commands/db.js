@@ -22,7 +22,7 @@ module.exports = {
           } catch (err) {
             console.log(err);
           }
-
+          
           message.channel.send(`Hai aggiunto ${target} al database`)
         } else if(message.member.roles.cache.some(role => role.name === 'Aiuto Resp. Élite')){
           try {
