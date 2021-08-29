@@ -3,16 +3,23 @@ module.exports = {
     aliases: [],
     description: "Comando ban",
     async execute (client, message, cmd, args, Discord) {
-
+        const chat = client.channels.cache.get(``) // Da inserire l'id della chat "WARN BAN"
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("Non hai i permessi per poterlo fare");
 
         const mentionMember = message.mentions.members.first();
-        let reason = args.slice(1).join(" "); //.ban <args(0) aka @member> | <args(1) aka reason>
-        if (!reason) reason = "Ragione non specificata";
+        let reason = args.slice(1).join(" ");
+        if (!reason) reason = "Motivo non specificato";
 
         const embed = new Discord.MessageEmbed()
         .setTitle(`Sei stato bannato da **${message.guild.name}**`)
         .setDescription(`Motivo: ${reason}`)
+        .setColor("#ff0000")
+        .setTimestamp()
+        .setFooter(client.user.tag, client.user.displayAvatarURL())
+
+        const BAN_EMBED = new Discord.MessageEmbed()
+        .setTitle(`${mentionMember} è stato punito`)
+        .setDescription(`Utente:${mentionMember}\nTipo: BAN\nMotivo:${reason}`)
         .setColor("#ff0000")
         .setTimestamp()
         .setFooter(client.user.tag, client.user.displayAvatarURL())
@@ -26,7 +33,7 @@ module.exports = {
         await mentionMember.send(embed);
         await mentionMember.ban({
             reason: reason
-        }).then(() => message.channel.send("Bannato con successo l'utente: " + mentionMember.user.tag));
-        
+        }).then(() => chat.send(BAN_EMBED))
+
     }
 }

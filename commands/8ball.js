@@ -15,6 +15,6 @@ module.exports = {
         .addField("Domanda:", question)
         .addField("Risposta", risposte[result])
 
-        message.channel.send(embed)
+        message.channel.send(embed) 
     }
 }

@@ -3,17 +3,24 @@ module.exports = {
     aliases: [],
     description: "Comando kick",
     async execute (client, message, cmd, args, Discord) {
-
+        const chat = client.channels.cache.get(``) // Da inserire l'id della chat "WARN BAN"
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("Non hai i permessi per poterlo fare");
 
         const mentionMember = message.mentions.members.first();
         let reason = args.slice(1).join(" "); //.kick <args(0) aka @member> | <args(1) aka reason>
-        if (!reason) reason = "Ragione non specificata";
+        if (!reason) reason = "Motivo non specificato";
 
-        const kickembed = new Discord.MessageEmbed()
+        const embed = new Discord.MessageEmbed()
         .setTitle(`Sei stato cacciato da **${message.guild.name}**`)
         .setDescription(`Motivo: ${reason}`)
         .setColor("#ff4d00")
+        .setTimestamp()
+        .setFooter(client.user.tag, client.user.displayAvatarURL())
+
+        const KICK_EMBED = new Discord.MessageEmbed()
+        .setTitle(`${mentionMember} è stato punito`)
+        .setDescription(`Utente:${mentionMember}\nTipo: KICK\nMotivo:${reason}`)
+        .setColor("#ff0000")
         .setTimestamp()
         .setFooter(client.user.tag, client.user.displayAvatarURL())
 
@@ -25,16 +32,20 @@ module.exports = {
 
 
         try {
-            await mentionMember.send(kickembed);
+            await mentionMember.send(embed);
         } catch (err) {
 
         }
 
         try {
-            await mentionMember.kick(reason);
+            await mentionMember.kick({
+                reason: reason
+            }).then(() => chat.send(KICK_EMBED))
         } catch (err) {
-            return message.channel.send("I was unabe to kick this user! Sorry...")
+            return message.channel.send("Non sono riuscito a bannare il membro, scusate 😢")
         }
+
+        
         
     }
 }

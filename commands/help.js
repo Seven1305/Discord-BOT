@@ -20,7 +20,7 @@ module.exports = {
         },
         {
             name: 'ÉLITE',
-            value: '`punti`丨`***`丨`***`',
+            value: '`TEMPORANEAMENTE DISABILITATI`',
         },
         {
             name: 'FUN',
@@ -28,10 +28,10 @@ module.exports = {
         },
         {
             name: 'MODERAZIONE',
-            value: '`ban`丨`kick`丨`clear`丨`***`丨`***`',
+            value: '`ban`丨`kick`丨`clear`丨`ALTRI IN ARRIVO`',
         },{
-            name: 'IN ARRIVO!!',
-            value: '`MUSICA!!`丨`WARN`丨`DICE`'
+            name: 'IN SPERIMENTAZIONE!!',
+            value: '`MUSICA!!`丨`WARN`丨`TICKETS`丨`MEME`'
         },)
 
         message.channel.send(help)

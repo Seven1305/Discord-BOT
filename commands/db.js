@@ -1,4 +1,4 @@
-const profileModel = require("../models/puntiElite");
+const profileModel = require("../models/profileSchema");
 
 module.exports = {
     name: 'db',
