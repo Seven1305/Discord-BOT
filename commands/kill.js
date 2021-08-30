@@ -2,7 +2,6 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: 'Kill',
-    aliases: ['attack'],
     description: "EsterEgg command",
     async execute(client, message, cmd, args) {
 
