@@ -22,7 +22,7 @@ module.exports = {
         },
         {
             name: 'SCRIM',
-            value: 'Per richiedere una scrim taggate un `RESP | SCRIM` nella chat <#799721640589787147> specificando di che team siete, e contro quale dei nostri team volete fare la scrim',
+            value: 'Per richiedere una scrim taggate un `RESP | SCRIM` nella chat <#799721640589787147> specificando che team siete, le regole, il giorno e l\'ora',
         },)
 
         message.channel.send(embed)

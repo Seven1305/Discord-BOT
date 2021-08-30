@@ -16,7 +16,7 @@ module.exports = {
             
             await message.channel.messages.fetch({ limit: args[0]}).then(messages =>{
                 message.channel.bulkDelete(messages);
-                message.channel.send('```✋ Puoi elliminare al massimo 100 messaggi ✋```').then(message => {
+                message.channel.send('```✋ Puoi elliminare al massimo 100 messaggi alla volta ✋```').then(message => {
                     message.delete({ timeout: 1000 })
                 })
             });
