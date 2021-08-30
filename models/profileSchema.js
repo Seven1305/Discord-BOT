@@ -6,6 +6,6 @@ const profileSchema = new mongoose.Schema({
   punti: { type: Number, default: 0 },
 });
 
-const model = mongoose.model("CerberusElite", prfileSchema);
+const model = mongoose.model("CerberusElite", profileSchema);
 
 module.exports = model;
