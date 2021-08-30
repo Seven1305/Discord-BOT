@@ -42,7 +42,6 @@ module.exports = {
                 reason: reason
             }).then(() => chat.send(KICK_EMBED))
         } catch (err) {
-            return message.channel.send("Non sono riuscito a bannare il membro, scusate 😢")
         }
 
         
