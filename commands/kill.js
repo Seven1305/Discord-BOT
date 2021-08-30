@@ -9,7 +9,7 @@ module.exports = {
 
         if(!target) return message.channel.send('Chi vuoi uccidere?')
 
-        if(target.id == '' ) return message.channel.send(`${message.member} questo utente è protetto da dio, non puoi ucciderlo`);
+        if(target.id == '395965199267397633' ) return message.channel.send(`${message.member} questo utente è protetto da dio, non puoi ucciderlo`);
 
         var risposte = [
             `${message.member} ha provato ad uccidere ${target} con una granta ma ha fallito suicidandosi 😂😂`,
@@ -25,14 +25,14 @@ module.exports = {
             `${message.member} ha massacrato ${target}, e non essendo ancora soddifatto gli ha ucciso pure la famiglia`
         ];
 
-        const embed = new Discord.MessageEmbed()
-        .setDescription(risposte[Math.floor(Math.random() * risposte.length)])
-        .setColor("RED")
-        .setTimestamp()
-        .setFooter(client.user.tag, client.user.displayAvatarURL())
+        // const embed = new Discord.MessageEmbed()
+        // .setDescription(risposte[Math.floor(Math.random() * risposte.length)])
+        // .setColor("RED")
+        // .setTimestamp()
+        // .setFooter(client.user.tag, client.user.displayAvatarURL())
 
 
-        await message.channel.send(embed);
+        await message.channel.send(risposte[Math.floor(Math.random() * risposte.length)]);
         
     }
 }
