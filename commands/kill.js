@@ -12,7 +12,6 @@ module.exports = {
 
         if(target.id == '' ) return message.channel.send(`${message.member} questo utente è protetto da dio, non puoi ucciderlo`);
 
-
         var risposte = [
             `${message.member} ha provato ad uccidere ${target} con una granta ma ha fallito suicidandosi 😂😂`,
             `${message.member} ha voluto provare una 360 no scope su ${target} ma è morto di danno da caduta 🤣🤣`,
@@ -26,7 +25,15 @@ module.exports = {
             `${message.member} vuoi davvero uccidere ${target} 😔`
             `${message.member} ha massacrato ${target}, e non essendo ancora soddifatto gli ha ucciso pure la famiglia`
         ];
-        await message.channel.send(risposte[Math.floor(Math.random() * risposte.length)]);
+
+        const embed = new Discord.MessageEmbed()
+        .setDescription(risposte[Math.floor(Math.random() * risposte.length)])
+        .setColor("RED")
+        .setTimestamp()
+        .setFooter(client.user.tag, client.user.displayAvatarURL())
+
+
+        await message.channel.send(embed);
         
     }
 }
