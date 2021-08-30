@@ -18,8 +18,8 @@ module.exports = {
         .setFooter(client.user.tag, client.user.displayAvatarURL())
 
         const BAN_EMBED = new Discord.MessageEmbed()
-        .setTitle(`${mentionMember} è stato punito`)
-        .setDescription(`Utente:${mentionMember}\nTipo: BAN\nMotivo:${reason}`)
+        .setTitle(`${mentionMember.tag} è stato punito`)
+        .setDescription(`Utente:${mentionMember}\nTipo: BAN\nMotivo: ${reason}`)
         .setColor("#ff0000")
         .setTimestamp()
         .setFooter(client.user.tag, client.user.displayAvatarURL())
