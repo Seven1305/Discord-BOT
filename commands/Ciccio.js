@@ -5,7 +5,7 @@ module.exports = {
     description: "Comando ",
     async execute(client, message, cmd, args) {
 
-        message.channel.send('Fanta!!')
+        message.reply('Fanta!!')
         
     }
 }
