@@ -9,7 +9,7 @@ module.exports = {
             new Discord.MessageEmbed()
             .setAuthor(message.member, message.member.useer.displayAvatarURL())
             .setTitle(`Ecco l'avatar di: ${member.user.tag}`)
-            .setImage(member.user.displayAvatarURL({ dynamic: true, size: 1080 }))
+            .setImage(member.user.displayAvatarURL({ dynamic: true, size: 520 }))
             .setColor('#6fff00')
             .setFooter(client.user.tag, client.user.displayAvatarURL())
         )
