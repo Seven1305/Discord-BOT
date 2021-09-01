@@ -1,8 +1,10 @@
+const Discord = require('discord.js')
+
 module.exports = {
     name: 'avatar',
     aliases: ['pp'],
     description: "Ottieni l'avatar di un membro",
-    async execute(client, message, cmd, args, Discord) {
+    async execute(client, message, cmd, args) {
         const member = message.mentions.members.first() || message.member;
 
         message.channel.send(
