@@ -11,7 +11,7 @@ module.exports = {
       const random = new Discord.MessageEmbed()
       .setTitle(`Calcolatore di eteroseussualità`)
       .setDescription(`**${target} è etero al:** \`${rng} %\``)
-      .setColor("GREEN")
+      .setColor("BLACK")
       
       message.channel.send(random);
     }

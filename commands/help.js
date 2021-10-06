@@ -7,14 +7,10 @@ module.exports = {
     async execute (client, message, args) {
 
         const help = new Discord.MessageEmbed()
-        .setColor("PURPLE")
-        .setTitle('Prefisso del bot: `^`')
+        .setColor("BLACK")
+        .setTitle('Prefisso del bot: `..`')
         .setAuthor('LISTA COMANDI', message.author.displayAvatarURL())
         .addFields({
-            name: 'INFO',
-            value: '`codm`丨`bs`丨`apex`丨`wr`丨`partner`',
-        },
-        {
             name: 'UTILITA\'',
             value: '`avatar`',
         },

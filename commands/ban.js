@@ -3,7 +3,7 @@ module.exports = {
     aliases: [],
     description: "Comando ban",
     async execute (client, message, cmd, args, Discord) {
-        const chat = client.channels.cache.get('692050320473194536') // Da inserire l'id della chat "WARN BAN"
+        const chat = client.channels.cache.get('890971001385537546') // Da inserire l'id della chat "WARN BAN"
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("Non hai i permessi per poterlo fare");
 
         const mentionMember = message.mentions.members.first();

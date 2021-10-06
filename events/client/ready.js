@@ -1,3 +1,3 @@
 module.exports = () =>{
-    console.log('Il BOT è online!');
+    console.log('Dark Academy BOT is online!');
 }
