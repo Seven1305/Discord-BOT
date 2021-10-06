@@ -15,10 +15,6 @@ module.exports = {
             value: '`avatar`',
         },
         {
-            name: 'ÉLITE',
-            value: '`TEMPORANEAMENTE DISABILITATI`',
-        },
-        {
             name: 'FUN',
             value: '`8ball`丨`gay`丨`etero`丨`joke`',
         },
